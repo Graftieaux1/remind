@@ -21,7 +21,7 @@ export default function AddPatientDialog() {
 
   const addPatient = async (nom: string, prenom: string, numBoitier: string) => {
     setLoading(true);
-    const { data, error } = await supabase
+    const {  error } = await supabase
       .from("users")
       .insert({ nom, prenom, num_boitier: numBoitier });
     if (error) {
